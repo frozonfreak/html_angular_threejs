@@ -1,0 +1,35 @@
+
+	<div class="row">
+	    <div class="col-md-6 columns">
+	        <div class="row">
+	            <div class="col-md-12 columns" >
+	                <ng-include src="partials/axis.html" ng-controller="AxisXCtrl"></ng-include>
+	            </div>
+	        </div>
+	        <div class="row">
+	            <div class="col-md-12 columns">
+	                <ng-include src="partials/axis.html" ng-controller="AxisYCtrl"/>
+	            </div>
+	        </div>
+	        <div class="row">
+	            <div class="col-md-12 columns">
+	                <ng-include src="partials/axis.html" ng-controller="AxisZCtrl"/>
+	            </div>
+	        </div>
+	        <div class="row">
+	            <div class="col-md-12 columns">
+	                <ul class="button-group">
+	                    <li><a class="button large alert" ng-mouseover="updateRedColor()">Red</a>
+	                    </li>
+	                    <li><a class="button large success" ng-mouseover="updateGreenColor()">Green</a>
+	                    </li>
+	                    <li><a class="button large" ng-mouseover="updateBlueColor()">Blue</a></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col-md-6 columns">
+	        <div id="container" style="height: 100px; width: 100%;">
+	        </div>
+	    </div>
+	</div>
