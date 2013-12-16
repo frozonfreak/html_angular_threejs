@@ -8,7 +8,7 @@ var scene = (function () {
 
 // create a WebGL renderer
 // and a scene
-    var renderer = new THREE.WebGLRenderer();
+    var renderer = new THREE.WebGLRenderer({antialias: true});
     var scene = new THREE.Scene();
 
     var cube;
