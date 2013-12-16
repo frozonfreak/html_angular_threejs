@@ -20,11 +20,16 @@ angular3D.config(function($stateProvider, $urlRouterProvider) {
 
 });
 //controller
-angular3D.controller('appController', function($scope){
-  
-	
-	$scope.searchText;
+angular3D.controller('appController', function($scope, $timeout){
+    
+  $scope.label = 'X';
+  $scope.axis = $scope.x;
 
+  $scope.labelY = 'Y';
+  $scope.axisY = $scope.y;
+
+  $scope.labelZ = 'Z';
+  $scope.axisZ = $scope.z;
   	//Initializer
 	init();
 	function init(){
@@ -36,7 +41,7 @@ angular3D.controller('appController', function($scope){
     $scope.z = position[2];
 	};
   
-
+  //Color Update
   $scope.updateRedColor = function(){
       scene.setCubeRedColorAndPaint();
   };
@@ -46,25 +51,9 @@ angular3D.controller('appController', function($scope){
   $scope.updateBlueColor = function(){
       scene.setCubeBlueColorAndPaint();
   };
-});
-angular3D.controller('app404Controller', function($scope){
 
-});
-angular.module('angular3D').run(function($http, $rootScope, $location) {
-
-//Active menu
- $rootScope.isActive = function (viewLocation) {
-        console.log($location.path());
-        return viewLocation === $location.path();
- };
-
-});
-angular3D.controller('AxisXCtrl', function($scope, $timeout){
-
-  $scope.label = 'X';
-  $scope.axis = $scope.x;
-
-  $scope.updateRotation = function () {
+  //Rotation Update X
+  $scope.updateRotationX = function () {
 
       this.x = this.axis;
 
@@ -73,72 +62,68 @@ angular3D.controller('AxisXCtrl', function($scope, $timeout){
   
   var xrotation;
   
-  $scope.rotate  = function(delta, timeout) {
+  $scope.rotateX  = function(delta, timeout) {
     xrotation = $timeout(function() {
       $scope.axis = $scope.axis + delta;
-      $scope.updateRotation();
-      $scope.rotate(delta);
+      $scope.updateRotationX();
+      $scope.rotateX(delta);
     }, timeout);      
-  }
+  };
   
-  $scope.stopRotation  = function() {
+  $scope.stopRotationX  = function() {
     $timeout.cancel(xrotation);
     console.log('Stoped rotation of X Axis');
-  }  
-});
+  };  
 
-angular3D.controller('AxisYCtrl', function($scope, $timeout){
-  $scope.label = 'Y';
-  $scope.axis = $scope.y;
+  //Rotation Update Y
+  $scope.updateRotationY = function () {
 
-  $scope.updateRotation = function () {
-
-      this.y = this.axis;
+      this.y = this.axisY;
 
       scene.setCubeYRotationAndPaint(this.y);
-  }
+  };
   
   var yrotation;
   
-  $scope.rotate  = function(delta, timeout) {
+  $scope.rotateY  = function(delta, timeout) {
     yrotation = $timeout(function() {
-      $scope.axis = $scope.axis + delta;
-      $scope.updateRotation();
-      $scope.rotate(delta);
+      $scope.axisY = $scope.axisY + delta;
+      $scope.updateRotationY();
+      $scope.rotateY(delta);
     }, timeout);      
-  }
+  };
   
-  $scope.stopRotation  = function() {
+  $scope.stopRotationY  = function() {
     $timeout.cancel(yrotation);
     console.log('Stoped rotation of Y Axis');
-  }
-  
-});
+  };
 
-angular3D.controller('AxisZCtrl', function($scope, $timeout){
 
-  $scope.label = 'Z';
-  $scope.axis = $scope.z;
+  //Rotation Update Z Axis
+  $scope.updateRotationZ = function () {
 
-  $scope.updateRotation = function () {
-
-      this.z = this.axis;
+      this.z = this.axisZ;
 
       scene.setCubeZRotationAndPaint(this.z);
-  }
+  };
   
   var zrotation;
   
-  $scope.rotate  = function(delta, timeout) {
+  $scope.rotateZ  = function(delta, timeout) {
     zrotation = $timeout(function() {
-      $scope.axis = $scope.axis + delta;
-      $scope.updateRotation();
-      $scope.rotate(delta);
+      $scope.axisZ = $scope.axisZ + delta;
+      $scope.updateRotationZ();
+      $scope.rotateZ(delta);
     }, timeout);      
-  }
+  };
   
-  $scope.stopRotation  = function() {
+  $scope.stopRotationZ  = function() {
     $timeout.cancel(zrotation);
     console.log('Stoped rotation of Z Axis');
-  }
+  };
+
 });
+angular3D.controller('app404Controller', function($scope){
+
+});
+

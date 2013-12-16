@@ -3,17 +3,57 @@
 	    <div class="col-md-6 columns">
 	        <div class="row">
 	            <div class="col-md-12 columns" >
-	                <ng-include src="partials/axis.html" ng-controller="AxisXCtrl"></ng-include>
+	                <div class="row	">
+	                    <div class="col-md-5 columns">
+	                        <span class="prefix">{{labelX}}-axis rotation</span>
+	                    </div>
+	                    <div class="col-md-1 columns">
+	                        <a class="button " ng-mouseenter="rotateX(0.05, 20)"  ng-mouseleave="stopRotationX()">+</a>
+	                    </div>
+	                    <div class="col-md-5 columns">
+	                        <input type="number" ng-model="axis" ng-change="updateRotationX()"/>
+	                    </div>
+	                    <div class="col-md-1 columns">
+	                        <a class="button " ng-mouseenter="rotateX(-0.05, 20)"  ng-mouseleave="stopRotationX()">-</a>
+	                    </div>
+	                </div>
+
 	            </div>
 	        </div>
 	        <div class="row">
 	            <div class="col-md-12 columns">
-	                <ng-include src="partials/axis.html" ng-controller="AxisYCtrl"/>
+	                <div class="row	">
+	                    <div class="col-md-5 columns">
+	                        <span class="prefix">{{labelY}}-axis rotation</span>
+	                    </div>
+	                    <div class="col-md-1 columns">
+	                        <a class="button " ng-mouseenter="rotateY(0.05, 20)"  ng-mouseleave="stopRotationY()">+</a>
+	                    </div>
+	                    <div class="col-md-5 columns">
+	                        <input type="number" ng-model="axisY" ng-change="updateRotationY()"/>
+	                    </div>
+	                    <div class="col-md-1 columns">
+	                        <a class="button " ng-mouseenter="rotateY(-0.05, 20)"  ng-mouseleave="stopRotationY()">-</a>
+	                    </div>
+	                </div>
 	            </div>
 	        </div>
 	        <div class="row">
 	            <div class="col-md-12 columns">
-	                <ng-include src="partials/axis.html" ng-controller="AxisZCtrl"/>
+	                <div class="row	">
+	                    <div class="col-md-5 columns">
+	                        <span class="prefix">{{labelZ}}-axis rotation</span>
+	                    </div>
+	                    <div class="col-md-1 columns">
+	                        <a class="button " ng-mouseenter="rotateZ(0.05, 20)"  ng-mouseleave="stopRotationZ()">+</a>
+	                    </div>
+	                    <div class="col-md-5 columns">
+	                        <input type="number" ng-model="axisZ" ng-change="updateRotationZ()"/>
+	                    </div>
+	                    <div class="col-md-1 columns">
+	                        <a class="button " ng-mouseenter="rotateZ(-0.05, 20)"  ng-mouseleave="stopRotationZ()">-</a>
+	                    </div>
+	                </div>
 	            </div>
 	        </div>
 	        <div class="row">
