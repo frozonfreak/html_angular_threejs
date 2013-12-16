@@ -22,8 +22,8 @@ angular3D.config(function($stateProvider, $urlRouterProvider) {
 //controller
 angular3D.controller('appController', function($scope, $timeout){
     
-  $scope.label = 'X';
-  $scope.axis = $scope.x;
+  $scope.labelX = 'X';
+  $scope.axisX = $scope.x;
 
   $scope.labelY = 'Y';
   $scope.axisY = $scope.y;
@@ -55,7 +55,7 @@ angular3D.controller('appController', function($scope, $timeout){
   //Rotation Update X
   $scope.updateRotationX = function () {
 
-      this.x = this.axis;
+      this.x = this.axisX;
 
       scene.setCubeXRotationAndPaint(this.x);
   }
@@ -64,7 +64,7 @@ angular3D.controller('appController', function($scope, $timeout){
   
   $scope.rotateX  = function(delta, timeout) {
     xrotation = $timeout(function() {
-      $scope.axis = $scope.axis + delta;
+      $scope.axisX = $scope.axisX + delta;
       $scope.updateRotationX();
       $scope.rotateX(delta);
     }, timeout);      

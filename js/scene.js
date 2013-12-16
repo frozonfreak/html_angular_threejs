@@ -85,7 +85,7 @@ var scene = (function () {
 
 // get the DOM element to attach to
 // - assume we've got jQuery to hand
-        var $container = $('#container');
+        var $container = $('#container1');
 
 // attach the render-supplied DOM element
         $container.append(renderer.domElement);

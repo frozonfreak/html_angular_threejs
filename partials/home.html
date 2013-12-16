@@ -1,75 +1,76 @@
-
+<div class="container">
 	<div class="row">
-	    <div class="col-md-6 columns">
+	    <div class="col-md-6">
 	        <div class="row">
-	            <div class="col-md-12 columns" >
-	                <div class="row	">
-	                    <div class="col-md-5 columns">
+	            <div class="col-md-12" >
+	               <div class="row">
+	                    <div class="col-md-3">
 	                        <span class="prefix">{{labelX}}-axis rotation</span>
 	                    </div>
-	                    <div class="col-md-1 columns">
-	                        <a class="button " ng-mouseenter="rotateX(0.05, 20)"  ng-mouseleave="stopRotationX()">+</a>
+	                    <div class="col-md-1">
+	                        <a class="button btn btn-default" ng-mouseenter="rotateX(0.05, 20)"  ng-mouseleave="stopRotationX()">+</a>
 	                    </div>
-	                    <div class="col-md-5 columns">
-	                        <input type="number" ng-model="axis" ng-change="updateRotationX()"/>
+	                    <div class="col-md-4">
+	                        <input type="number" ng-model="axisX" ng-change="updateRotationX()"/>
 	                    </div>
-	                    <div class="col-md-1 columns">
-	                        <a class="button " ng-mouseenter="rotateX(-0.05, 20)"  ng-mouseleave="stopRotationX()">-</a>
+	                    <div class="col-md-1">
+	                        <a class="button btn btn-default" ng-mouseenter="rotateX(-0.05, 20)"  ng-mouseleave="stopRotationX()">-</a>
 	                    </div>
-	                </div>
-
+	           		</div>
 	            </div>
 	        </div>
 	        <div class="row">
-	            <div class="col-md-12 columns">
-	                <div class="row	">
-	                    <div class="col-md-5 columns">
+	            <div class="col-md-12" >
+	                <div class="row">
+	                    <div class="col-md-3">
 	                        <span class="prefix">{{labelY}}-axis rotation</span>
 	                    </div>
-	                    <div class="col-md-1 columns">
-	                        <a class="button " ng-mouseenter="rotateY(0.05, 20)"  ng-mouseleave="stopRotationY()">+</a>
+	                    <div class="col-md-1">
+	                        <a class="button btn btn-default" ng-mouseenter="rotateY(0.05, 20)"  ng-mouseleave="stopRotationY()">+</a>
 	                    </div>
-	                    <div class="col-md-5 columns">
+	                    <div class="col-md-4">
 	                        <input type="number" ng-model="axisY" ng-change="updateRotationY()"/>
 	                    </div>
-	                    <div class="col-md-1 columns">
-	                        <a class="button " ng-mouseenter="rotateY(-0.05, 20)"  ng-mouseleave="stopRotationY()">-</a>
+	                    <div class="col-md-1">
+	                        <a class="button btn btn-default" ng-mouseenter="rotateY(-0.05, 20)"  ng-mouseleave="stopRotationY()">-</a>
 	                    </div>
 	                </div>
 	            </div>
 	        </div>
 	        <div class="row">
-	            <div class="col-md-12 columns">
-	                <div class="row	">
-	                    <div class="col-md-5 columns">
+	            <div class="col-md-12" >
+	                <div class="row">
+	                    <div class="col-md-3">
 	                        <span class="prefix">{{labelZ}}-axis rotation</span>
 	                    </div>
-	                    <div class="col-md-1 columns">
-	                        <a class="button " ng-mouseenter="rotateZ(0.05, 20)"  ng-mouseleave="stopRotationZ()">+</a>
+	                    <div class="col-md-1">
+	                        <a class="button btn btn-default" ng-mouseenter="rotateZ(0.05, 20)"  ng-mouseleave="stopRotationZ()">+</a>
 	                    </div>
-	                    <div class="col-md-5 columns">
+	                    <div class="col-md-4">
 	                        <input type="number" ng-model="axisZ" ng-change="updateRotationZ()"/>
 	                    </div>
-	                    <div class="col-md-1 columns">
-	                        <a class="button " ng-mouseenter="rotateZ(-0.05, 20)"  ng-mouseleave="stopRotationZ()">-</a>
+	                    <div class="col-md-1">
+	                        <a class="button btn btn-default" ng-mouseenter="rotateZ(-0.05, 20)"  ng-mouseleave="stopRotationZ()">-</a>
 	                    </div>
 	                </div>
 	            </div>
 	        </div>
+
 	        <div class="row">
-	            <div class="col-md-12 columns">
+	            <div class="col-md-12">
 	                <ul class="button-group">
-	                    <li><a class="button large alert" ng-mouseover="updateRedColor()">Red</a>
+	                    <li><a class="btn btn-danger" ng-mouseover="updateRedColor()">Red</a>
 	                    </li>
-	                    <li><a class="button large success" ng-mouseover="updateGreenColor()">Green</a>
+	                    <li><a class="btn btn-success" ng-mouseover="updateGreenColor()">Green</a>
 	                    </li>
-	                    <li><a class="button large" ng-mouseover="updateBlueColor()">Blue</a></li>
+	                    <li><a class="btn btn-primary" ng-mouseover="updateBlueColor()">Blue</a></li>
 	                </ul>
 	            </div>
 	        </div>
 	    </div>
-	    <div class="col-md-6 columns">
-	        <div id="container" style="height: 100px; width: 100%;">
+	    <div class="col-md-6">
+	        <div id="container1" style="height: 100px; width: 100%;">
 	        </div>
 	    </div>
 	</div>
+</div>
