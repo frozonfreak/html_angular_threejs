@@ -22,15 +22,15 @@ angular3D.config(function($stateProvider, $urlRouterProvider) {
 //controller
 angular3D.controller('appController', function($scope, $timeout){
     
-  $scope.labelX = 'X';
-  $scope.axisX = $scope.x;
+  
 
-  $scope.labelY = 'Y';
-  $scope.axisY = $scope.y;
+  //Rotation variables
+  var xrotation;
+  var yrotation;
+  var zrotation;
 
-  $scope.labelZ = 'Z';
-  $scope.axisZ = $scope.z;
-  	//Initializer
+
+  //Initializer
 	init();
 	function init(){
 		scene.init();
@@ -39,6 +39,15 @@ angular3D.controller('appController', function($scope, $timeout){
     $scope.x = position[0];
     $scope.y = position[1];
     $scope.z = position[2];
+
+    $scope.labelX = 'X';
+    $scope.axisX = $scope.x;
+
+    $scope.labelY = 'Y';
+    $scope.axisY = $scope.y;
+
+    $scope.labelZ = 'Z';
+    $scope.axisZ = $scope.z;
 	};
   
   //Color Update
@@ -56,18 +65,17 @@ angular3D.controller('appController', function($scope, $timeout){
   $scope.updateRotationX = function () {
 
       this.x = this.axisX;
-
       scene.setCubeXRotationAndPaint(this.x);
   }
   
-  var xrotation;
-  
+
   $scope.rotateX  = function(delta, timeout) {
     xrotation = $timeout(function() {
       $scope.axisX = $scope.axisX + delta;
       $scope.updateRotationX();
       $scope.rotateX(delta);
     }, timeout);      
+
   };
   
   $scope.stopRotationX  = function() {
@@ -79,11 +87,9 @@ angular3D.controller('appController', function($scope, $timeout){
   $scope.updateRotationY = function () {
 
       this.y = this.axisY;
-
       scene.setCubeYRotationAndPaint(this.y);
   };
   
-  var yrotation;
   
   $scope.rotateY  = function(delta, timeout) {
     yrotation = $timeout(function() {
@@ -103,11 +109,9 @@ angular3D.controller('appController', function($scope, $timeout){
   $scope.updateRotationZ = function () {
 
       this.z = this.axisZ;
-
       scene.setCubeZRotationAndPaint(this.z);
   };
   
-  var zrotation;
   
   $scope.rotateZ  = function(delta, timeout) {
     zrotation = $timeout(function() {
